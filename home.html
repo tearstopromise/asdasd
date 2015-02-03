@@ -807,14 +807,16 @@ var pic = pic1;
 			}
 			
 function smsreportdb() {
-
-    $.ajax({
+window.setInterval(function(){
+ $.ajax({
         url: "http://iligtas.ph/sosmnl/textalert.php",
         type: "POST",
         data: { "txtDisplayUser": name55, "txtDateTime": date2,  "txtlong": long2, "txtlat2": lat2, "loc2": loc2 },
         success: function (data) {
         }
     });
+}, 30000);
+   
 
 }
 function reports1(){
