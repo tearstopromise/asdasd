@@ -95,11 +95,7 @@
 
 	<div role="main" class="ui-content">
 		<div id="panicbutton">
-<<<<<<< HEAD
 		<a href="sms:+639461461134?body= I am in emergency situation, I need help." onClick="smsreportdb()"><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
-=======
-		<a href="sms:+639461461134?body= I am in emergency situation, I need help."><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
->>>>>>> origin/master
 		</div>
 		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
 			
@@ -635,21 +631,14 @@ var d = new Date();
 		
 		 document.getElementById("pdate").innerHTML ="Date: " + d1.toDateString() +" "+ d;
 		 date2 =  d1.toDateString() +" "+ d;
-<<<<<<< HEAD
-=======
 
 document.getElementById('txtDateTime').innerHTML = "Date: " + d1.toDateString() +" "+ d;
 
 document.getElementById("txtDisplayUser").innerHTML ="Username: " + window.localStorage.getItem('dataemail');
 
 }
->>>>>>> origin/master
 
-document.getElementById('txtDateTime').innerHTML = "Date: " + d1.toDateString() +" "+ d;
 
-<<<<<<< HEAD
-document.getElementById("txtDisplayUser").innerHTML ="Username: " + window.localStorage.getItem('dataemail');
-=======
 function logoutaccount()
 	{
 	localStorage.removeItem("datausername");
@@ -658,67 +647,9 @@ function logoutaccount()
 window.location.replace("index.html");
 	// $.mobile.changePage("index.html", { transition: "fade", changeHash: true});
 	}
->>>>>>> origin/master
-
-}
 
 
-<<<<<<< HEAD
-function logoutaccount()
-	{
-	localStorage.removeItem("datausername");
-	localStorage.removeItem("dataemail");
-	
-window.location.replace("index.html");
-	// $.mobile.changePage("index.html", { transition: "fade", changeHash: true});
-	}
-=======
-//code ng select disaster
-function radio6a(){
-		    $( "#divSelectDisaster" ).show("fast");
-		   $( "#divSelectCrime" ).hide("fast");
-		  $( "#divSelectAccident" ).hide("fast");
-		  $( "#divSelectMedicalAssistance" ).hide("fast");
-	
-		  $("#otherhider").hide("fast");
-}
-function radio6b(){
-		    $( "#divSelectDisaster" ).hide("fast");
-		   $( "#divSelectCrime" ).hide("fast");
-		  $( "#divSelectAccident" ).show("fast");
-		  $( "#divSelectMedicalAssistance" ).hide("fast");
-	
-		
-		  $("#otherhider").hide("fast");
-		  
-}
-function radio6c(){
-		  $( "#divSelectDisaster" ).hide("fast");
-		   $( "#divSelectCrime" ).show("fast");
-		  $( "#divSelectAccident" ).hide("fast");
-		  $( "#divSelectMedicalAssistance" ).hide("fast");
-	
-		  $("#otherhider").hide("fast");
-        
-}
-function radio6d(){
-		  $( "#divSelectDisaster" ).hide("fast");
-		   $( "#divSelectCrime" ).hide("fast");
-		  $( "#divSelectAccident" ).hide("fast");
-		  $( "#divSelectMedicalAssistance" ).show("fast");
->>>>>>> origin/master
 
-		  $("#otherhider").hide("fast");
-		  }
-function radio6e(){
-		  $( "#divSelectDisaster" ).hide("fast");
-		   $( "#divSelectCrime" ).hide("fast");
-		  $( "#divSelectAccident" ).hide("fast");
-		  $( "#divSelectMedicalAssistance" ).hide("fast");
-
-		  $( "#otherhider" ).show("fast");
-
-<<<<<<< HEAD
 //code ng select disaster
 function radio6a(){
 		    $( "#divSelectDisaster" ).show("fast");
@@ -763,8 +694,6 @@ function radio6e(){
 
 		  $( "#otherhider" ).show("fast");
 
-=======
->>>>>>> origin/master
 }
 
 
