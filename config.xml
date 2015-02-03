@@ -16,6 +16,10 @@
    
 
     <!-- third party plugins -->
+	<gap:config-file platform="android" parent="/manifest">
+   <uses-feature android:name="android.hardware.screen.landscape" />
+</gap:config-file>
+	
     <gap:plugin name="org.apache.cordova.statusbar"/>
 
     <!-- core plugins -->
