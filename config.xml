@@ -17,6 +17,7 @@
 
     <!-- third party plugins -->
 	
+	
     <gap:plugin name="org.apache.cordova.statusbar"/>
 
     <!-- core plugins -->
