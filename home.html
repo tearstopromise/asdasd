@@ -19,25 +19,14 @@
 -->
 <html>
 <head> 
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
-		
-      <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-      <script src="js/bootstrap.min.js"></script>
-	
-<!-- end ng code ko -->  
-	  
-	
-    
-<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />
-	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-	
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript" src="js/twitterfeed.js"></script>
 
-	  
+
+  
+<link rel="stylesheet" href="css/themes/my-custom-theme.min.css" />
+
+
+<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script type="text/javascript" src="js/twitterfeed.js"></script>	  
 <script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 	
 		 <style>
@@ -61,16 +50,20 @@
 		left: 85%;
 	}
 
-
+ #panicbutton2{
+		position: relative;
+		display: block;
+		left: 85%;
+	}
+	
 
       </style>
     </head>
     <body>
 
-
-<div data-role="page" id="one">
-<div data-role="panel" id="myPanel" data-display="overlay" data-swipe-close="true" data-theme="a">
-    		<ul data-role="listview" data-icon="false" data-theme="a">
+<div data-role="page" id="one" data-theme="d">
+<div data-role="panel" id="myPanel" data-display="overlay" data-swipe-close="true" data-theme="d">
+    		<ul data-role="listview" data-icon="false" data-theme="d">
 			
 			
 	        <li data-role="list-divider" data-theme="">MENU</li>  
@@ -79,7 +72,7 @@
 
 	          <li><a href="#myreports" onClick="reports1()" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-info">My Reports</a></li>  			  
 	          
-			<li><a href="javascript:logoutaccount();" class="ui-btn ui-shadow ui-btn-icon-right ui-icon-action">Logout</a></li>
+			<li><a href="javascript:logoutaccount();" class="ui-btn ui-btn-a ui-shadow ui-btn-icon-right ui-icon-action">Logout</a></li>
 			
 						
 			</ul>
@@ -92,28 +85,49 @@
 
 	<div role="main" class="ui-content">
 		<div id="panicbutton">
-		<!-- nilagayn ko lng ng onclick="smsreprtdb()" -->
-		<a href="sms:+639461461134?body=I am in emergency situation, I need help." onClick="smsreportdb()"><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
+		
+		<a href="sms:+639461461134?body=I am in emergency situation, I need help." ><img id="panicpic" src="images/panicbutton.png" style="width: 15%;" /></a>
 		</div>
+		<div id="panicbutton2" style="display:none">
+            <a href="#popupStop" data-rel="popup" data-position-to="window" data-transition="pop"><img id="panicpic2" src="images/panicbutton_disabled.png" style="width: 15%;" /></a>
+		</div>
+		
 		<!--<p><a href="#two" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Personal Alarm</a></p>-->
 			
 	
+	<a href="#both" data-rel="popup" data-transition="fade"  id="try1" data-position-to="window"><img src="images/logo-small.png"  id="myLogo1" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
+		<a href="#both" data-rel="popup" data-transition="fade"  style="display:none"  id="try2" data-position-to="window"><img src="images/logo-album.png"   id="myLogo1" style="margin-top: 7%; width:70%;margin-left:auto;margin-right:auto;display:block"></a>
 	
+		
+		<div id="both" data-role="popup" data-theme="d" data-overlay-theme="b">
   		<center>	
 		<a   id="camera" onClick="next1();" ><img src="images/logo-camera.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
 		<a   id="camera2" onClick="next1();" ><img src="images/logo-album.png"  id="myLogo" style="margin-top: 7%; width:45%;margin-left:auto;margin-right:auto;"></a>
-		
-		
-		
 		</center>
+
+		</div>
 	
 	
-		<a id="btnCall" href="tel:09461461134" class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
+		<a id="btnCall" href="tel:09461461134"  class="ui-btn ui-shadow ui-corner-all ui-icon-phone ui-btn-icon-left ui-btn-d">Emergency</a>
 		
 		<center>	<label id="lugar1"></label></center>
+
+        <div data-role="popup" id="popupStop" data-theme="d" class="ui-corner-all">
+          
+                <div style="padding:10px 20px;">
+                    <h3>Please Input Password</h3>
+       
+                    <label for="pw" class="ui-hidden-accessible">Password:</label>
+                    <input type="password" name="pass" id="verifypw" value="" placeholder="password" data-theme="d">
+                    <button id="verifybtn" class="ui-btn ui-shadow ui-corner-all ui-icon- ui-btn-icon-left ui-btn-d">OK</button>
+                </div>
+                </div>
+
+
+
 		</div><!-- /content -->
 
-	<!-- <div data-role="footer" data-theme="a" data-position="fixed">
+	<!-- <div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div>/footer -->
 </div><!-- /page one -->
@@ -124,7 +138,7 @@
 <!-- Start of second page: #two -->
 
 
-<div data-role="page" id="two" data-theme="a">
+<div data-role="page" id="two" data-theme="d">
 <div data-role="header">
     <a href="#one" class="ui-btn ui-icon-back ui-btn-icon-notext" style="padding:0;border:0;background:transparent;"></a><h1>Report Incident </h1>
     <a href="" onclick="lipat();" class="ui-btn ui-icon-home ui-btn-icon-notext" style="padding:0;border:0;background:transparent;"></a>
@@ -163,7 +177,6 @@
 	    <option value="Explosion">Explosion</option>
 	    <option  value="Fire">Fire</option>
 	    <option  value="Flooding">Flooding</option>
-		<option  value="Others">Others</option>
 		<option   value="Mitigate">Mitigate</option>
 	</select>
 	</div>
@@ -180,7 +193,7 @@
 	    <option> Select Accident Type</option>
 	    <option value="Car Accident">Car Accident</option>
 	    <option value="Motorcycle Accident">Motorcycle Accident</option>
-	    <option value="Others">Others</option>
+	 
 	</select>
 	</div>
 </div>
@@ -228,7 +241,6 @@
 	<option value="EmergencyChildbirth">Emergency Childbirth</option>
 	<option value="HeartAttack">Heart Attack</option>
 	<option value="Poisoning">Poisoning</option>
-	<option value="Others">Others</option>
 	</select>
 	</div>
 	</div>
@@ -274,10 +286,10 @@
 		   
 		   </div>
 
-</div><!-- /page two -->
+<!-- /page two -->
 
 
-<div data-role="page" id="four">
+<div data-role="page" id="four" data-theme="d">
 
 
 
@@ -314,7 +326,7 @@
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -325,7 +337,7 @@
 
 
 
-<div data-role="page" id="five">
+<div data-role="page" id="five" data-theme="d">
 
 
 
@@ -348,7 +360,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -361,7 +373,7 @@ Report Sending Please Wait... </div>
 
 
 
-<div data-role="page" id="myreports">
+<div data-role="page" id="myreports" data-theme="d">
 
 	<div data-role="header">
 	
@@ -386,7 +398,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -399,7 +411,7 @@ Report Sending Please Wait... </div>
 
 
 
-<div data-role="page" id="three">
+<div data-role="page" id="three" data-theme="d">
 
 
 
@@ -414,13 +426,13 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
 
 
-<div data-role="page" id="userguide">
+<div data-role="page" id="userguide" data-theme="d">
 
 
 
@@ -435,7 +447,7 @@ Report Sending Please Wait... </div>
 	</div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -486,7 +498,7 @@ Report Sending Please Wait... </div>
 </div><!-- /content -->
 
 	
-	<div data-role="footer" data-theme="a" data-position="fixed">
+	<div data-role="footer" data-theme="d" data-position="fixed">
 		<h4></h4>
 	</div><!-- /footer -->
 </div><!-- /page one -->
@@ -495,15 +507,16 @@ Report Sending Please Wait... </div>
 
 
 <!-- code ko -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-		
-      <script src="js/jquery-1.10.2.min.js"></script>
-	  <script type="text/javascript" src="js/Toast.js"></script>
-   <script type="text/javascript">
+    <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+
+	    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+	<script type="text/javascript" src="js/Toast.js"></script>
+	<script type="text/javascript">
 getLocation();
 pangdate();
-	
+	var timerId = 0;
 var incidentV ;
 			var factV;
 		
@@ -653,42 +666,38 @@ function radio6a(){
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-	
-		  $("#otherhider").hide("fast");
+		$("#otherhider").hide("fast");
+		$("#txtTypeIncidentDisaster2").selectmenu( "open" );
 }
 function radio6b(){
 		    $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).show("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-	
-		
 		  $("#otherhider").hide("fast");
-		  
+		  	$("#txtTypeIncidentAccident").selectmenu( "open" );
 }
 function radio6c(){
 		  $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).show("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-	
 		  $("#otherhider").hide("fast");
-        
+          	$("#txtTypeIncidentCrime").selectmenu( "open" );
 }
 function radio6d(){
 		  $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).show("fast");
-
 		  $("#otherhider").hide("fast");
+		  $("#txtTypeIncidentMedicalAssistance").selectmenu( "open" );
 		  }
 function radio6e(){
 		  $( "#divSelectDisaster" ).hide("fast");
 		   $( "#divSelectCrime" ).hide("fast");
 		  $( "#divSelectAccident" ).hide("fast");
 		  $( "#divSelectMedicalAssistance" ).hide("fast");
-
 		  $( "#otherhider" ).show("fast");
 
 }
@@ -802,19 +811,7 @@ var pic = pic1;
 		   
 			}
 			
-function smsreportdb() {
-window.setInterval(function(){
- $.ajax({
-        url: "http://iligtas.ph/sosmnl/textalert.php",
-        type: "POST",
-        data: { "txtDisplayUser": name55, "txtDateTime": date2,  "txtlong": long2, "txtlat2": lat2, "loc2": loc2 },
-        success: function (data) {
-        }
-    });
-}, 30000);
-   
 
-}
 function reports1(){
 myname = window.localStorage.getItem('dataemail');
 				$.ajax({
@@ -829,15 +826,79 @@ myname = window.localStorage.getItem('dataemail');
 		   
 			}
 			
-$(document).ready(function(){
+
+			$(document).ready(function(){
   $("#panicpic").click(function(){
+  $("#panicbutton").hide();
+  $("#panicbutton2").show();
+  
+myname = window.localStorage.getItem('dataemail');
+ 
+
+	timerId = window.setInterval(function(){
+	
+				$.ajax({
+					url: "http://iligtas.ph/sosmnl/textalert.php",
+					type: "POST",
+					data: {"txtDisplayUser":myname,"txtDateTime":date2,"txtlong":long2,"txtlat2":lat2,"loc2":loc2},
+					success:function(data){
+						
+		
+	}
+	});	
+	
+}, 30000);
+
+
   });
+  
+
+
+  $("#panicpic2").click(function(){
+  $("#panicbutton").hide();
+  $("#panicbutton2").show();
+  $('#popupStop').show();
+  });
+
+  
+  $("#verifybtn").click(function () {
+      var userpw = window.localStorage.getItem('datapassword');
+      var inputpw = document.getElementById("verifypw").value;
+ 
+    if (userpw == inputpw) {
+
+
+          $("#panicbutton2").hide();
+          $("#panicbutton").show();
+
+          clearInterval(timerId);
+	$('#popupStop').hide();
+	document.getElementById("verifypw").value="";
+      }
+      else {
+		$('#popupStop').hide();
+		document.getElementById("verifypw").value="";
+		
+          alert("Wrong Password!");
+      }
+
+  });
+  
+  
+  
+    $("#try1").hover(function () {
+	$('#try1').hide();
+	$('#try2').show();
+	 });
+	
 });
 
 
-</script>
-<!-- end code ko -->
 
+
+
+</script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 
 </body>
 </html>
